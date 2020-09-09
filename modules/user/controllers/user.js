@@ -3,19 +3,18 @@ const AppError = require('../../utils/error/appError');
 const User = require('../models/user');
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
-  //   const users = await User.find();
+  const users = await User.find();
 
   res.status(200).json({
     status: 'success',
     data: {
-      users: 'It worked',
+      users,
     },
   });
 });
 
 exports.createUser = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
-  console.log(newUser);
 
   res.status(201).json({
     status: 'success',
