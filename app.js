@@ -4,6 +4,7 @@ const globalErrorHandler = require('./modules/utils/error/controller/error');
 const AppError = require('./modules/utils/error/appError');
 const userRouter = require('./modules/user/routes');
 const connectDB = require('./config/db');
+const categoryRouter = require('./modules/category/routes');
 
 const app = express();
 
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json());
 
 // Routes
+app.use('/api/v1/categories', categoryRouter);
 app.use('/api/v1/users', userRouter);
 
 // Unhandled Routes
