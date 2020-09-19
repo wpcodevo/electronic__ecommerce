@@ -9,6 +9,8 @@ const sendEmail = async (options) => {
       user: process.env.EMAIL_USERNAME,
       pass: process.env.EMAIL_PASSWORD,
     },
+    requireTLS: true,
+    secureConnection: false,
   });
 
   //   Define email options
