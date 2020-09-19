@@ -7,9 +7,9 @@ const createCategories = (categories, parentId = null) => {
 
   let category;
   if (parentId === null) {
-    category = categories.filter((cat) => cat.parantId === undefined);
+    category = categories.filter((cat) => cat.parentId === undefined);
   } else {
-    category = categories.filter((cat) => cat.parantId === parentId);
+    category = categories.filter((cat) => cat.parentId === parentId);
   }
 
   category.forEach((cat) => {
